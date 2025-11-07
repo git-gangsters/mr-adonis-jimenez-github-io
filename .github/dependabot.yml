@@ -1,17 +1,17 @@
 # .github/dependabot.yml
-# This file will update both Python packages and GitHub Actions
+# This file will update both GitHub Actions and Jekyll (Ruby) gems
 
 version: 2
 updates:
   
-  # Check for Python (pip) updates
-  - package-ecosystem: "pip"
-    directory: "/" # Location of requirements.txt
-    schedule:
-      interval: "weekly"
-      
   # Check for GitHub Actions updates
   - package-ecosystem: "github-actions"
     directory: "/" # Location of .github/workflows
+    schedule:
+      interval: "weekly"
+      
+  # Check for Jekyll (Ruby) gem updates
+  - package-ecosystem: "bundler"
+    directory: "/" # Location of Gemfile
     schedule:
       interval: "weekly"
