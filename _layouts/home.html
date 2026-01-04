@@ -7,6 +7,28 @@ layout: default
   <p class="title">{{ site.data.data.profile.title }}</p>
   <p class="tagline">{{ site.data.data.profile.tagline }}</p>
 
+  <h2>Contact</h2>
+
+<form action="https://formspree.io/f/xvzgdkbz" method="POST">
+  <label>
+    Contact
+    <input type="text" name="name" required>
+  </label>
+
+  <label>
+    Email
+    <input type="email" name="email" required>
+  </label>
+
+  <label>
+    Message
+    <textarea name="message" required></textarea>
+  </label>
+
+  <button type="submit">Send</button>
+</form>
+
+
   <p class="links">
     <a href="{{ site.data.data.links.github }}">GitHub</a> |
     <a href="{{ site.data.data.links.linkedin }}">LinkedIn</a>
