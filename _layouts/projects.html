@@ -17,3 +17,30 @@ layout: default
     </p>
   </article>
 {% endfor %}
+
+---
+layout: default
+---
+
+{% assign project = site.data.data.projects | where: "slug", page.slug | first %}
+
+<article class="project-detail">
+  <h1>{{ project.name }}</h1>
+  <p class="lead">{{ project.description }}</p>
+
+  <p><strong>Tech Stack:</strong> {{ project.tech | join: ", " }}</p>
+
+  <p>
+    <a href="{{ project.repo }}">GitHub Repository</a>
+    {% if project.demo %}
+      | <a href="{{ project.demo }}">Live Demo</a>
+    {% endif %}
+  </p>
+
+  <h3>Highlights</h3>
+  <ul>
+    {% for h in project.highlights %}
+      <li>{{ h }}</li>
+    {% endfor %}
+  </ul>
+</article>
